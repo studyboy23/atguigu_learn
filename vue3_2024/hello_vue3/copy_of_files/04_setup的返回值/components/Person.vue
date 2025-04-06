@@ -33,6 +33,9 @@ export default {
 
     //將數據、方法交出去，模板中才能使用
     return { name, age, tel, changeName, changeAge, showTel }
+
+    //setup的返回值也可以是渲染函數
+    // return ()=>"哈哈"
   },
 }
 </script>

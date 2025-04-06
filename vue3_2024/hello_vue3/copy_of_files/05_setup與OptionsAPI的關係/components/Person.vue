@@ -5,19 +5,39 @@
     <button type="button" @click="changeName">修改名字</button>
     <button type="button" @click="changeAge">修改年齡</button>
     <button type="button" @click="showTel">查看聯繫方式</button>
+    <hr />
+    <h2>測試1：{{ a }}</h2>
+    <h2>測試2：{{ c }}</h2>
+    <button type="button" @click="b">測試</button>
   </div>
 </template>
 
 <script lang="ts">
 export default {
   name: 'Person',
-
+  beforeCreate() {
+    console.log('beforCreate')
+  },
+  data() {
+    return {
+      a: 100,
+      c: this.name,
+      d: 900,
+    }
+  },
+  methods: {
+    b() {
+      console.log('b')
+    },
+  },
   setup() {
     // console.log(this); //setup函數中的this是undefinded, Vue3中已經弱化了this
     //data，原本是寫在data裡的，此時的name,age,tel不是嚮應式的數據 //響應式是指data與網頁模板變數做資料雙向綁定
     let name = 'aaa' //
     let age = 18
     let tel = '000000000'
+
+    // let x = d
 
     function changeName() {
       name = 'AAA' //注意!這樣修改name，頁面沒有變化
@@ -33,6 +53,9 @@ export default {
 
     //將數據、方法交出去，模板中才能使用
     return { name, age, tel, changeName, changeAge, showTel }
+
+    //setup的返回值也可以是渲染函數
+    // return ()=>"哈哈"
   },
 }
 </script>
