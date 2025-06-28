@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hello_world.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="welcome.cpp">
+    <ClCompile Include="variable.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
